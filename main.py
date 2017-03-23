@@ -4,7 +4,7 @@ Rules:
 
 Procedure:
 1. Build a graph from the board with knight moves.
-2. Simple travelling salesman problem after that!
+2. Simple DFS traversal after that!
 """
 
 """
@@ -39,6 +39,10 @@ BOARD = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         ]
 
 BOARD_SCORES = [0, None, None, -2, -1, 0, 1, 2, 4]
+
+
+
+
 
 """
 Graph:
@@ -122,8 +126,13 @@ class Graph:
                 print self.get_dir(destination, path)
 
         else:
-            # for i in sorted(self.dict[node], key=lambda x: self.dict[node][x][0], reverse=True):
-            for i in self.dict[node]:
+            # Best   (ntns)  node_new_node_score = lambda x: self.dict[node][x][0]
+            # Meh?   (name)  name_of_node = None # key=None sorts based on name of node
+            # Good   (nns)   new_node_score = lambda x: BOARD_SCORES[BOARD[int(x.split("_")[0])][int(x.split("_")[1])]]
+            # Maybe  (nnos)  new_node_outbound = lambda x: sum(zip(*self.dict[x].values())[0])
+            # Maybe  (nnoa)  new_node_outbound_ave = lambda x: sum(zip(*self.dict[x].values())[0]) / float(len(self.dict[x]))
+            for i in sorted(self.dict[node], key=lambda x: BOARD_SCORES[BOARD[int(x.split("_")[0])][int(x.split("_")[1])]], reverse=True):
+            # for i in self.dict[node]:
                 # print i
                 if visited[i] == False:
                     self.find_all_paths(i, destination, visited, path)
@@ -295,11 +304,14 @@ class GraphBuilder:
             return score_2, path_strs[1]
 
 
-
 if __name__ == "__main__":
     args = sys.argv
-    NODE_TO_START = args[1]
-    # print NODE_TO_START
+    try:
+        NODE_TO_START = args[1]
+    except Exception as e:
+        print "Usage: python main.py <NODE_TO_START>"
+        print e
+        sys.exit()
 
     graph_builder = GraphBuilder(BOARD, BOARD_SCORES)
     graph = graph_builder.build_graph()

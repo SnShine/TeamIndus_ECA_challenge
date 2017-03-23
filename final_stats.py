@@ -1,3 +1,11 @@
+# no sorting, no neighbour selection
+# solution = "EES | WSS | SEE | WNN | NWW | NWW | WNN | NEE | EES | EEN | NWW | ESS | NEE | WWN | ESS | WWN | NEE | ESS | NWW | ESS | SSE | WWN | EEN | WSS | WSS | NWW | WWN | NWW | SSE | WSS | NEE | NWW | ESS | NEE | NEE | ESS | NWW | WWS | NWW | NEE | ESS | NWW | EEN | EEN | NEE | WWN | NNW | NWW | SWW | ESS | NNE | NEE | WSS | WWN | SSW | NEE | WNN | SSW | ESS | EEN | EES | WWS | WNN | SEE"
+# no sorting, 6_3 selected
+# solution = "WWS | NWW | EEN | SSE | EES | ESS | NWW | ENN | ESS | NWW | EEN | WSS | SEE | WNN | NWW | NWW | WNN | NEE | EES | EEN | NWW | ESS | NEE | WWN | WWS | NWW | SWW | ESS | SEE | WSS | ESS | NWW | EEN | SSW | NNW | WSS | NEE | NWW | ESS | NEE | EES | EEN | ENN | WNN | SWW | EES | NNE | SWW | WWN | ENN | NEE | ESS | WSS | WWN | NEE | ENN | WWS | NWW | WWS | ESS | SWW | NNW | ENN | SSE | WWS | ENN | EES | SSE"
+# solution = "WWS | NWW | EEN | SSE | EES | ESS | NWW | ENN | ESS | NWW | EEN | WSS | SEE | WNN | NWW | NWW | WNN | NEE | EES | EEN | NWW | ESS | EES | WSS | NWW | EEN | ENN | WWN | WWS | NWW | SWW | ESS | SEE | WSS | ESS | NWW | EEN | SSW | NNW | WSS | NEE | NWW | ESS | NEE | EES | EEN | ENN | WWN | WWN | ENN | NEE | ESS | WSS | WWN | NEE | ENN | WWS | NWW | WWS | ESS | SWW | NNW | ENN | SSE | WWS | ENN | EES | SSE"
+
+
+
 BOARD = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
          [1, 2, 6, 7, 4, 8, 6, 8, 7, 3, 1],
          [1, 3, 8, 6, 5, 3, 4, 5, 6, 7, 1],
@@ -8,19 +16,9 @@ BOARD = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
          [1, 7, 8, 3, 6, 5, 7, 4, 2, 7, 1],
          [1, 6, 5, 7, 8, 4, 3, 6, 5, 6, 1],
          [1, 5, 3, 4, 6, 2, 6, 7, 4, 8, 1],
-         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-        ]
-
+         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
 BOARD_SCORES = [0, None, None, -2, -1, 0, 1, 2, 4]
-
 STARTING_NODE = [5, 5]
-
-# solution = "EES | WSS | SEE | WNN | NWW | NWW | WNN | NEE | EES | EEN | NWW | ESS | NEE | WWN | ESS | WWN | NEE | ESS | NWW | ESS | SSE | WWN | EEN | WSS | WSS | NWW | WWN | NWW | SSE | WSS | NEE | NWW | ESS | NEE | NEE | ESS | NWW | WWS | NWW | NEE | ESS | NWW | EEN | EEN | NEE | WWN | NNW | NWW | SWW | ESS | NNE | NEE | WSS | WWN | SSW | NEE | WNN | SSW | ESS | EEN | EES | WWS | WNN | SEE"
-# solution = "WWS | NWW | EEN | SSE | EES | ESS | NWW | ENN | ESS | NWW | EEN | WSS | SEE | WNN | NWW | NWW | WNN | NEE | EES | EEN | NWW | ESS | NEE | WWN | WWS | NWW | SWW | ESS | SEE | WSS | ESS | NWW | EEN | SSW | NNW | WSS | NEE | NWW | ESS | NEE | EES | EEN | ENN | WNN | SWW | EES | NNE | SWW | WWN | ENN | NEE | ESS | WSS | WWN | NEE | ENN | WWS | NWW | WWS | ESS | SWW | NNW | ENN | SSE | WWS | ENN | EES | SSE"
-solution = "WWS | NWW | EEN | SSE | EES | ESS | NWW | ENN | ESS | NWW | EEN | WSS | SEE | WNN | NWW | NWW | WNN | NEE | EES | EEN | NWW | ESS | EES | WSS | NWW | EEN | ENN | WWN | WWS | NWW | SWW | ESS | SEE | WSS | ESS | NWW | EEN | SSW | NNW | WSS | NEE | NWW | ESS | NEE | EES | EEN | ENN | WWN | WWN | ENN | NEE | ESS | WSS | WWN | NEE | ENN | WWS | NWW | WWS | ESS | SWW | NNW | ENN | SSE | WWS | ENN | EES | SSE"
-
-
-solution = solution.split(" | ")
 
 steps = [[5, 5]]
 scores = 0
@@ -33,7 +31,7 @@ def is_mineral(step):
         return True
     return False
 
-
+solution = solution.split(" | ")
 for i in solution:
     last_step = steps[-1]
     new_step = last_step[:]
@@ -56,11 +54,12 @@ for i in solution:
 
 
 print "Score: %i" % scores
-# print "Steps: {}".format(steps)
-print "Len of steps: %i" % len(steps)
-print "Total steps taken in code: %i" % (len(steps)-1)
-print "Total steps in solution: %i" % len(solution)
 
+print "Len of steps: %i" % len(steps)
+print "Total steps in the provided solution: %i" % len(solution)
+print "Total steps while verifying solution: %i" % (len(steps)-1)
+
+print ""
 print "Number of minerals landed: %i" % num_minerals_landed
 print "Total no. of minerals passed/landed: %i" % num_total_minerals
 
@@ -78,4 +77,8 @@ for move in solution:
     ans.append(move)
 
 print ""
+print "-----Steps-----"
+print steps
+print ""
+print "-----Solution-----"
 print " | ".join(ans)
