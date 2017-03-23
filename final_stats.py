@@ -5,7 +5,9 @@
 # 276 | ntns, 7_6 selected
 # solution = "ESS | WWS | WWN | WSS | NEE | ENN | NWW | NNW | ENN | SSE | SSE | WWN | NNE | NEE | EES | EES | WSS | WSS | NNW | NNE | NNE | WWS | SSW | SWW | WNN | NEE | NEE | EES | ESS | WSS | ESS | SWW | NWW | WWS | ENN | EEN | ESS | EEN | SSW | WWN | NNE | NEE | WNN | WWS | WSS | EEN | SEE | SSW | SWW | NNW | WSS | NWW | WNN | SEE | WSS | NNW | EEN | NNE | EEN | EES | ENN | WWN | WWS | NWW | SSE | WWN | SSE | SEE"
 # 277 | ntns, 4_3 selected
-solution = "WWN | WNN | SSW | EES | WNN | NNE | SWW | ESS | NNE | NEE | EES | EES | WSS | WSS | NNW | NNE | NNE | WWS | SSW | SEE | WNN | ENN | SEE | WSS | SSW | NEE | WNN | WWS | WSS | ESS | SEE | ENN | SWW | NNW | SWW | SWW | EES | NNE | ESS | EEN | WWN | ESS | EEN | NNW | NNE | NNW | NWW | WWS | WWN | SSW | ESS | ENN | SSE | WSS | WWS | EES | NEE | WNN | SSW | NWW | ESS | NEE | WWN | WNN | EES | NEE"
+# solution = "WWN | WNN | SSW | EES | WNN | NNE | SWW | ESS | NNE | NEE | EES | EES | WSS | WSS | NNW | NNE | NNE | WWS | SSW | SEE | WNN | ENN | SEE | WSS | SSW | NEE | WNN | WWS | WSS | ESS | SEE | ENN | SWW | NNW | SWW | SWW | EES | NNE | ESS | EEN | WWN | ESS | EEN | NNW | NNE | NNW | NWW | WWS | WWN | SSW | ESS | ENN | SSE | WSS | WWS | EES | NEE | WNN | SSW | NWW | ESS | NEE | WWN | WNN | EES | NEE"
+# 283 | ntns, 7_6 selected
+solution = "ESS | WWS | WWN | WSS | NEE | ENN | NWW | NNW | ENN | SSE | SSE | WWN | NNE | NEE | EES | EES | WSS | WSS | NNW | NNE | NNE | WWS | SSW | SWW | NWW | ENN | SSE | SWW | EES | SWW | ESS | NNE | WWS | EES | NEE | EES | EEN | NNW | NNE | NNW | NWW | WWS | WWS | NNE | EES | NEE | SEE | WSS | NWW | SWW | ESS | EEN | SEE | SSW | SWW | NNW | WSS | NWW | EEN | EEN | ESS | EEN | SSW | WWN | NNE | NEE | WNN | WWS | WWN | SSE"
 
 
 BOARD = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],

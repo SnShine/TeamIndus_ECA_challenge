@@ -42,8 +42,6 @@ BOARD_SCORES = [0, None, None, -2, -1, 0, 1, 2, 4]
 
 
 
-
-
 """
 Graph:
     Bi-directional graph, because scores gained from node1->node2 is different from scores
@@ -71,6 +69,10 @@ class Graph:
         self.dict.pop(A, None)
         [self.dict[i].pop(A, None) for i in self.dict]
 
+    def remove_connection(self, A, B):
+        """ removes only one direction connection from A to B """
+        self.dict[A].pop(B, None)
+
     def get(self, A, B=None):
         links = self.dict.setdefault(A, {})
 
@@ -83,7 +85,7 @@ class Graph:
         return list(self.dict.keys())
 
     def __repr__(self):
-        return "<Graph {}>".format(json.dumps(self.dict, indent=4))
+        return "<Graph with {} nodes and {} total edges>".format(len(self.dict), sum([len(self.dict[i]) for i in self.dict]))
 
     def save_to_disk(self, file_name="graph.json"):
         for i in self.dict:
@@ -141,14 +143,14 @@ class Graph:
         visited[node] = False
 
 
-    def traverse(self, starting_node="5_5"):
+    def traverse(self, node_to_start, starting_node="5_5"):
         visited = {}
         path = []
         for i in self.dict.keys():
             visited[i] = False
 
         # for neighbour in self.dict[starting_node]:
-        for neighbour in [NODE_TO_START]:
+        for neighbour in [node_to_start]:
             print(neighbour)
 
             self.find_all_paths(neighbour, starting_node, visited, path)
@@ -307,13 +309,13 @@ class GraphBuilder:
 if __name__ == "__main__":
     args = sys.argv
     try:
-        NODE_TO_START = args[1]
+        node_to_start = args[1]
     except Exception as e:
-        print "Usage: python main.py <NODE_TO_START>"
+        print "Usage: python main.py <node_to_start>"
         print e
         sys.exit()
 
     graph_builder = GraphBuilder(BOARD, BOARD_SCORES)
     graph = graph_builder.build_graph()
 
-    graph.traverse()
+    graph.traverse(node_to_start)
