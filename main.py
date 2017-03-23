@@ -20,7 +20,9 @@ Board legend:
     7: 2        Rock-free terrain
     8: 4        Minerals
 """
+
 import json
+import sys
 from collections import OrderedDict
 
 BOARD = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -136,8 +138,8 @@ class Graph:
         for i in self.dict.keys():
             visited[i] = False
 
-        for neighbour in self.dict[starting_node]:
-        # for neighbour in ["6_3"]:
+        # for neighbour in self.dict[starting_node]:
+        for neighbour in [NODE_TO_START]:
             print(neighbour)
 
             self.find_all_paths(neighbour, starting_node, visited, path)
@@ -295,6 +297,10 @@ class GraphBuilder:
 
 
 if __name__ == "__main__":
+    args = sys.argv
+    NODE_TO_START = args[1]
+    # print NODE_TO_START
+
     graph_builder = GraphBuilder(BOARD, BOARD_SCORES)
     graph = graph_builder.build_graph()
 
