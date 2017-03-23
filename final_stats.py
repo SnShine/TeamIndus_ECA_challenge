@@ -1,9 +1,11 @@
-# no sorting, no neighbour selection
+# 222 | no sorting, no neighbour selection
 # solution = "EES | WSS | SEE | WNN | NWW | NWW | WNN | NEE | EES | EEN | NWW | ESS | NEE | WWN | ESS | WWN | NEE | ESS | NWW | ESS | SSE | WWN | EEN | WSS | WSS | NWW | WWN | NWW | SSE | WSS | NEE | NWW | ESS | NEE | NEE | ESS | NWW | WWS | NWW | NEE | ESS | NWW | EEN | EEN | NEE | WWN | NNW | NWW | SWW | ESS | NNE | NEE | WSS | WWN | SSW | NEE | WNN | SSW | ESS | EEN | EES | WWS | WNN | SEE"
-# no sorting, 6_3 selected
-# solution = "WWS | NWW | EEN | SSE | EES | ESS | NWW | ENN | ESS | NWW | EEN | WSS | SEE | WNN | NWW | NWW | WNN | NEE | EES | EEN | NWW | ESS | NEE | WWN | WWS | NWW | SWW | ESS | SEE | WSS | ESS | NWW | EEN | SSW | NNW | WSS | NEE | NWW | ESS | NEE | EES | EEN | ENN | WNN | SWW | EES | NNE | SWW | WWN | ENN | NEE | ESS | WSS | WWN | NEE | ENN | WWS | NWW | WWS | ESS | SWW | NNW | ENN | SSE | WWS | ENN | EES | SSE"
+# 240 | no sorting, 6_3 selected
 # solution = "WWS | NWW | EEN | SSE | EES | ESS | NWW | ENN | ESS | NWW | EEN | WSS | SEE | WNN | NWW | NWW | WNN | NEE | EES | EEN | NWW | ESS | EES | WSS | NWW | EEN | ENN | WWN | WWS | NWW | SWW | ESS | SEE | WSS | ESS | NWW | EEN | SSW | NNW | WSS | NEE | NWW | ESS | NEE | EES | EEN | ENN | WWN | WWN | ENN | NEE | ESS | WSS | WWN | NEE | ENN | WWS | NWW | WWS | ESS | SWW | NNW | ENN | SSE | WWS | ENN | EES | SSE"
-
+# 276 | ntns, 7_6 selected
+# solution = "ESS | WWS | WWN | WSS | NEE | ENN | NWW | NNW | ENN | SSE | SSE | WWN | NNE | NEE | EES | EES | WSS | WSS | NNW | NNE | NNE | WWS | SSW | SWW | WNN | NEE | NEE | EES | ESS | WSS | ESS | SWW | NWW | WWS | ENN | EEN | ESS | EEN | SSW | WWN | NNE | NEE | WNN | WWS | WSS | EEN | SEE | SSW | SWW | NNW | WSS | NWW | WNN | SEE | WSS | NNW | EEN | NNE | EEN | EES | ENN | WWN | WWS | NWW | SSE | WWN | SSE | SEE"
+# 277 | ntns, 4_3 selected
+solution = "WWN | WNN | SSW | EES | WNN | NNE | SWW | ESS | NNE | NEE | EES | EES | WSS | WSS | NNW | NNE | NNE | WWS | SSW | SEE | WNN | ENN | SEE | WSS | SSW | NEE | WNN | WWS | WSS | ESS | SEE | ENN | SWW | NNW | SWW | SWW | EES | NNE | ESS | EEN | WWN | ESS | EEN | NNW | NNE | NNW | NWW | WWS | WWN | SSW | ESS | ENN | SSE | WSS | WWS | EES | NEE | WNN | SSW | NWW | ESS | NEE | WWN | WNN | EES | NEE"
 
 
 BOARD = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],

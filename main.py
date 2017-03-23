@@ -131,7 +131,7 @@ class Graph:
             # Good   (nns)   new_node_score = lambda x: BOARD_SCORES[BOARD[int(x.split("_")[0])][int(x.split("_")[1])]]
             # Maybe  (nnos)  new_node_outbound = lambda x: sum(zip(*self.dict[x].values())[0])
             # Maybe  (nnoa)  new_node_outbound_ave = lambda x: sum(zip(*self.dict[x].values())[0]) / float(len(self.dict[x]))
-            for i in sorted(self.dict[node], key=lambda x: BOARD_SCORES[BOARD[int(x.split("_")[0])][int(x.split("_")[1])]], reverse=True):
+            for i in sorted(self.dict[node], key=None, reverse=True):
             # for i in self.dict[node]:
                 # print i
                 if visited[i] == False:
