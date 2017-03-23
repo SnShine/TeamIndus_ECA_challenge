@@ -3,8 +3,8 @@ Rules:
 
 
 Procedure:
-1. Build a graph from the board with knight moves.
-2. Simple DFS traversal after that!
+1. Build a graph from the board with knight like moves.
+2. Simple backtracking after that!
 """
 
 """

@@ -57,17 +57,17 @@ for i in solution:
 
 print "Score: %i" % scores
 
-print "Len of steps: %i" % len(steps)
-print "Total steps in the provided solution: %i" % len(solution)
-print "Total steps while verifying solution: %i" % (len(steps)-1)
+print "No. of landing zones including starting point: %i" % len(steps)
+print "Total no. of steps in the provided solution: %i" % len(solution)
+print "Total no. of steps while verifying solution: %i" % (len(steps)-1)
 
 print ""
-print "Number of minerals landed: %i" % num_minerals_landed
-print "Total no. of minerals passed/landed: %i" % num_total_minerals
+print "Number of times landed on minerals: %i" % num_minerals_landed
+print "Total no. of times passed/landed on minerals: %i" % num_total_minerals
 
 
 steps = [str(i)+"_"+str(j) for i, j in steps]
-print "Repetitions including base: " + str(len(steps)-len(set(steps)))
+print "Repetitions including starting position: %i" % (len(steps)-len(set(steps)))
 
 
 
