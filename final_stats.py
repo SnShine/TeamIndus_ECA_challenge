@@ -15,19 +15,8 @@
 # 287 exp, ntns, 4_3 selected, removed <=0 weighted edges
 solution = "WWN | WNN | SSW | EES | WNN | NNE | SWW | ESS | NNE | NEE | EES | EES | WSS | WSS | NNW | NNE | NNE | WWS | SSW | ESS | ESS | EEN | SSW | WWN | WWN | SWW | EES | NNE | ESS | EEN | ENN | WNN | ENN | WWN | SSW | SWW | WSS | SWW | ESS | NEE | WWN | WSS | NEE | ENN | SSE | WWS | NWW | NEE | NNE | WNN | WSS | NNW | ENN | SEE | NEE | EES | ESS | WSS | ESS | SWW | NNW | ENN | SWW | NNE | NEE | SSE | WWS | NWW"
 
+from main import BOARD, BOARD_SCORES
 
-BOARD = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-         [1, 2, 6, 7, 4, 8, 6, 8, 7, 3, 1],
-         [1, 3, 8, 6, 5, 3, 4, 5, 6, 7, 1],
-         [1, 6, 7, 4, 6, 2, 8, 7, 4, 6, 1],
-         [1, 5, 7, 5, 3, 7, 6, 2, 7, 4, 1],
-         [1, 3, 6, 8, 6, 0, 4, 8, 6, 3, 1],
-         [1, 4, 2, 6, 4, 5, 6, 7, 3, 5, 1],
-         [1, 7, 8, 3, 6, 5, 7, 4, 2, 7, 1],
-         [1, 6, 5, 7, 8, 4, 3, 6, 5, 6, 1],
-         [1, 5, 3, 4, 6, 2, 6, 7, 4, 8, 1],
-         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
-BOARD_SCORES = [0, None, None, -2, -1, 0, 1, 2, 4]
 STARTING_NODE = [5, 5]
 
 steps = [[5, 5]]
@@ -54,10 +43,12 @@ for i in solution:
             new_step[0] -= 1
         else:
             new_step[0] += 1
-        # print step
-        scores += BOARD_SCORES[BOARD[new_step[0]][new_step[1]]]
+        new_step_score = BOARD_SCORES[BOARD[new_step[0]][new_step[1]]]
+        scores += new_step_score
+        print "Intermediate action, step, score added, cum score: {}, {}, {}, {}".format(j, new_step, new_step_score, scores)
         if is_mineral(new_step):
             num_total_minerals += 1
+    print "Landed step: {}".format(new_step)
     steps.append(new_step)
     if is_mineral(new_step):
         num_minerals_landed += 1
@@ -88,7 +79,7 @@ for move in solution:
 
 print ""
 print "-----Steps-----"
-print steps
+print [(i+1, j) for i, j in enumerate(steps)]
 print ""
 print "-----Solution-----"
 print " | ".join(ans)
