@@ -160,7 +160,6 @@ class Graph:
             self.find_all_paths(neighbour, starting_node, visited, path)
 
 
-
 class GraphBuilder:
     def __init__(self, board, board_scores):
         self.board = board
@@ -315,7 +314,7 @@ if __name__ == "__main__":
     try:
         node_to_start = args[1]
     except Exception as e:
-        print "Usage: python main.py <node_to_start>"
+        print "Usage: python main.py <node_to_start like '4_3' zero indexed>"
         print e
         sys.exit()
 

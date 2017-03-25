@@ -45,10 +45,10 @@ for i in solution:
             new_step[0] += 1
         new_step_score = BOARD_SCORES[BOARD[new_step[0]][new_step[1]]]
         scores += new_step_score
-        print "Intermediate action, step, score added, cum score: {}, {}, {}, {}".format(j, new_step, new_step_score, scores)
+        # print "Intermediate action, step, score added, cum score: {}, {}, {}, {}".format(j, new_step, new_step_score, scores)
         if is_mineral(new_step):
             num_total_minerals += 1
-    print "Landed step: {}".format(new_step)
+    # print "Landed step: {}".format(new_step)
     steps.append(new_step)
     if is_mineral(new_step):
         num_minerals_landed += 1
@@ -68,8 +68,6 @@ print "Total no. of times passed/landed on minerals: %i" % num_total_minerals
 steps = [str(i)+"_"+str(j) for i, j in steps]
 print "Repetitions including starting position: %i" % (len(steps)-len(set(steps)))
 
-
-
 # calculate final acceptable solution from solution string
 ans = []
 for move in solution:
@@ -79,7 +77,7 @@ for move in solution:
 
 print ""
 print "-----Steps-----"
-print [(i+1, j) for i, j in enumerate(steps)]
+print [(i, j) for i, j in enumerate(steps)]
 print ""
 print "-----Solution-----"
 print " | ".join(ans)
